@@ -35,7 +35,6 @@ public class GoogleSearchPage
     {
         q = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("q")));
         Boolean result = driver.getTitle().contains(searchPhrase);
-        System.out.println(driver.getTitle());
         return (result);
     }
 }

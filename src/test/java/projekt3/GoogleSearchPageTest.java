@@ -23,10 +23,18 @@ public class GoogleSearchPageTest
     }
 
     @Test
-    public void searchTest()
+    public void searchSuccessfulTest()
     {
         GoogleSearchPage page = PageFactory.initElements(driver, GoogleSearchPage.class);
         page.search("Hello world");
+        assertTrue(page.titleContainsSearchPhrase());
+    }
+
+    @Test
+    public void searchFailedTest()
+    {
+        GoogleSearchPage page = PageFactory.initElements(driver, GoogleSearchPage.class);
+        page.search("asdfghjkasdfghmnnvxxzqwertyuasdfgh");
         assertTrue(page.titleContainsSearchPhrase());
     }
 
