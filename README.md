@@ -1,6 +1,8 @@
 # Testowanie aplikacji JAVA 2017-2018
 ## Projekt 3 (JBehave + SeleniumWebDriver) 
-
+| Travis CI Status | 
+:--:
+[![Build Status](https://travis-ci.com/TestowanieJAVA2017-2018Gr2/projekt-3-kkulewski.svg?token=raYvD9MwETMyAUKsjNr7&branch=master)](https://travis-ci.com/TestowanieJAVA2017-2018Gr2/projekt-3-kkulewski)
 -----------------------
 ### REGUŁY GRY
 
