@@ -18,7 +18,7 @@ public class GoogleSearchPageTest
     @BeforeAll
     public static void setUpBeforeClass()
     {
-        System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
+        BrowserHandler.setBrowser(Browser.Chrome);
         driver = new ChromeDriver();
     }
 
