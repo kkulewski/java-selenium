@@ -2,7 +2,6 @@ package projekt3;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Ignore;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
@@ -11,13 +10,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 import projekt3.pages.GoogleSearchPage;
 
-public class GoogleSearchPageTest
-{
+public class GoogleSearchPageTest {
     private static WebDriver driver;
 
     @Test
-    public void searchSuccessfulChromeTest()
-    {
+    public void searchSuccessfulChromeTest() {
         BrowserHandler.setBrowser(Browser.Chrome);
         driver = new ChromeDriver();
         GoogleSearchPage page = PageFactory.initElements(driver, GoogleSearchPage.class);
@@ -26,8 +23,7 @@ public class GoogleSearchPageTest
     }
 
     @Test
-    public void searchFailedChromeTest()
-    {
+    public void searchFailedChromeTest() {
         BrowserHandler.setBrowser(Browser.Chrome);
         driver = new ChromeDriver();
         GoogleSearchPage page = PageFactory.initElements(driver, GoogleSearchPage.class);
@@ -36,8 +32,7 @@ public class GoogleSearchPageTest
     }
 
     @Test
-    public void searchSuccessfulFirefoxTest()
-    {
+    public void searchSuccessfulFirefoxTest() {
         BrowserHandler.setBrowser(Browser.Firefox);
         driver = new FirefoxDriver();
         GoogleSearchPage page = PageFactory.initElements(driver, GoogleSearchPage.class);
@@ -46,8 +41,7 @@ public class GoogleSearchPageTest
     }
 
     @Test
-    public void searchFailedFirefoxTest()
-    {
+    public void searchFailedFirefoxTest() {
         BrowserHandler.setBrowser(Browser.Firefox);
         driver = new FirefoxDriver();
         GoogleSearchPage page = PageFactory.initElements(driver, GoogleSearchPage.class);
@@ -56,8 +50,7 @@ public class GoogleSearchPageTest
     }
 
     @AfterEach
-    public void tearDownAfterClass()
-    {
+    public void tearDownAfterClass() {
         driver.quit();
     }
 }
