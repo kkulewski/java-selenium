@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.support.PageFactory;
 import projekt3.pages.GoogleSearchPage;
 
@@ -51,26 +50,6 @@ public class GoogleSearchPageTest
     {
         BrowserHandler.setBrowser(Browser.Firefox);
         driver = new FirefoxDriver();
-        GoogleSearchPage page = PageFactory.initElements(driver, GoogleSearchPage.class);
-        page.search("asdfghjkasdfghmnnvxxzqwertyuasdfgh");
-        assertTrue(page.titleContainsSearchPhrase());
-    }
-
-    @Test
-    public void searchSuccessfulOperaTest()
-    {
-        BrowserHandler.setBrowser(Browser.Opera);
-        driver = new OperaDriver();
-        GoogleSearchPage page = PageFactory.initElements(driver, GoogleSearchPage.class);
-        page.search("Hello world");
-        assertTrue(page.titleContainsSearchPhrase());
-    }
-
-    @Test
-    public void searchFailedOperaTest()
-    {
-        BrowserHandler.setBrowser(Browser.Opera);
-        driver = new OperaDriver();
         GoogleSearchPage page = PageFactory.initElements(driver, GoogleSearchPage.class);
         page.search("asdfghjkasdfghmnnvxxzqwertyuasdfgh");
         assertTrue(page.titleContainsSearchPhrase());
