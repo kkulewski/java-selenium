@@ -6,3 +6,9 @@ public class App
     {
         System.out.println("Hello world!");
     }
+
+    public boolean someMethod()
+    {
+        return true;
+    }
+}
