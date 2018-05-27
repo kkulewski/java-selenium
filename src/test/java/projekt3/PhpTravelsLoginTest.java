@@ -31,6 +31,22 @@ public class PhpTravelsLoginTest {
         assertThat(page.getPageTitle()).contains("My Account");
     }
 
+    @Test
+    public void failedLoginChromeTest() {
+        BrowserHandler.setBrowser(Browser.Chrome);
+        driver = new ChromeDriver();
+        loginWithIncorrectCredentials();
+        assertThat(page.invalidLoginMessageAppeared()).isTrue();
+    }
+
+    @Test
+    public void failedLoginFirefoxTest() {
+        BrowserHandler.setBrowser(Browser.Firefox);
+        driver = new FirefoxDriver();
+        loginWithIncorrectCredentials();
+        assertThat(page.invalidLoginMessageAppeared()).isTrue();
+    }
+
     @AfterEach
     public void tearDown() {
         driver.quit();
@@ -40,5 +56,11 @@ public class PhpTravelsLoginTest {
     {
         page = PageFactory.initElements(driver, PhpTravelsLoginPage.class);
         page.enterLogin("user@phptravels.com", "demouser");
+    }
+
+    private void loginWithIncorrectCredentials()
+    {
+        page = PageFactory.initElements(driver, PhpTravelsLoginPage.class);
+        page.enterLogin("user@phptravels.com", "wrongPassword");
     }
 }

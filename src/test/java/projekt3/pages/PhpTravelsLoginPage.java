@@ -35,4 +35,8 @@ public class PhpTravelsLoginPage {
         return driver.getTitle();
     }
 
+    public boolean invalidLoginMessageAppeared() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("resultlogin")));
+        return driver.findElement(By.className("resultlogin")).isDisplayed();
+    }
 }
