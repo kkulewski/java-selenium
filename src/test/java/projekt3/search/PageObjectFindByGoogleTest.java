@@ -14,14 +14,14 @@ public class PageObjectFindByGoogleTest {
     private static WebDriver driver;
 
     @BeforeAll
-    public static void setUpBeforeClass() throws Exception
+    public static void setUpBeforeClass()
     {
         System.setProperty("webdriver.gecko.driver", "resources/geckodriver");
         driver = new FirefoxDriver();
     }
 
     @Test
-    public void searchTest() throws Exception
+    public void searchTest()
     {
         PageFactoryGoogle page = PageFactory.initElements(driver, PageFactoryGoogle.class);
         page.search("Hello world");
@@ -29,7 +29,7 @@ public class PageObjectFindByGoogleTest {
     }
 
     @AfterAll
-    public static void tearDownAfterClass() throws Exception
+    public static void tearDownAfterClass()
     {
         driver.quit();
     }

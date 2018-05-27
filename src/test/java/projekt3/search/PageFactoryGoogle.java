@@ -13,8 +13,8 @@ public class PageFactoryGoogle {
 
     @FindBy(name = "q")
     private WebElement q;
-    public WebDriver driver;
-    public WebDriverWait wait;
+    private WebDriver driver;
+    private WebDriverWait wait;
   
     public PageFactoryGoogle(WebDriver driver)
     {
@@ -23,14 +23,14 @@ public class PageFactoryGoogle {
         wait = new WebDriverWait(driver,30);
     }
   
-    public void search(String text) throws Exception
+    void search(String text)
     {
         searchPhrase = text;
         q.sendKeys(text);
         q.submit();
     }
   
-    public boolean titleContainsSearchPhrase() throws Exception
+    boolean titleContainsSearchPhrase()
     {
         q = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("q")));
         Boolean result = driver.getTitle().contains(searchPhrase);
