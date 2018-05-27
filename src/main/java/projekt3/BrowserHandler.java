@@ -47,9 +47,6 @@ public class BrowserHandler
                 System.setProperty("webdriver.gecko.driver", "resources/geckodriver");
                 break;
 
-            case InternetExplorer:
-                break;
-
             case Opera:
                 System.setProperty("webdriver.opera.driver", "resources/operadriver");
                 break;
