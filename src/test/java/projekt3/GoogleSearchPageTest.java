@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.PageFactory;
 import projekt3.pages.GoogleSearchPage;
 
@@ -67,6 +68,28 @@ public class GoogleSearchPageTest {
         options.addArguments("headless");
         options.addArguments("window-size=1600x900");
         driver = new ChromeDriver(options);
+
+        failedSearch();
+        assertThat(page.titleContainsSearchPhrase()).isTrue();
+    }
+
+    @Test
+    public void searchSuccessfulFirefoxHeadlessTest() {
+        BrowserHandler.setBrowser(Browser.Firefox);
+        FirefoxOptions options = new FirefoxOptions();
+        options.addArguments("--headless");
+        driver = new FirefoxDriver(options);
+
+        successfulSearch();
+        assertThat(page.titleContainsSearchPhrase()).isTrue();
+    }
+
+    @Test
+    public void searchFailedFirefoxHeadlessTest() {
+        BrowserHandler.setBrowser(Browser.Firefox);
+        FirefoxOptions options = new FirefoxOptions();
+        options.addArguments("--headless");
+        driver = new FirefoxDriver(options);
 
         failedSearch();
         assertThat(page.titleContainsSearchPhrase()).isTrue();
