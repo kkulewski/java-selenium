@@ -23,12 +23,14 @@ public class BrowserHandler
                 break;
 
             case Firefox:
+                System.setProperty("webdriver.gecko.driver", "resources/geckodriver.exe");
                 break;
 
             case InternetExplorer:
                 break;
 
             case Opera:
+                System.setProperty("webdriver.opera.driver", "resources/operadriver.exe");
                 break;
         }
     }
@@ -38,6 +40,7 @@ public class BrowserHandler
         switch (browser)
         {
             case Chrome:
+                System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
                 break;
 
             case Firefox:
@@ -48,6 +51,7 @@ public class BrowserHandler
                 break;
 
             case Opera:
+                System.setProperty("webdriver.opera.driver", "resources/operadriver");
                 break;
         }
     }
