@@ -13,19 +13,22 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class PhpTravelsLoginTest {
 
     private static WebDriver driver;
+    private PhpTravelsLoginPage page;
 
     @Test
     public void successfulLoginChromeTest() {
         BrowserHandler.setBrowser(Browser.Chrome);
         driver = new ChromeDriver();
-        assertThat(this.getLoggedInPageTitle()).contains("My Account");
+        loginWithCorrectCredentials();
+        assertThat(page.getPageTitle()).contains("My Account");
     }
 
     @Test
     public void successfulLoginFirefoxTest() {
         BrowserHandler.setBrowser(Browser.Firefox);
         driver = new FirefoxDriver();
-        assertThat(this.getLoggedInPageTitle()).contains("My Account");
+        loginWithCorrectCredentials();
+        assertThat(page.getPageTitle()).contains("My Account");
     }
 
     @AfterEach
@@ -33,10 +36,9 @@ public class PhpTravelsLoginTest {
         driver.quit();
     }
 
-    private String getLoggedInPageTitle()
+    private void loginWithCorrectCredentials()
     {
-        PhpTravelsLoginPage page = PageFactory.initElements(driver, PhpTravelsLoginPage.class);
+        page = PageFactory.initElements(driver, PhpTravelsLoginPage.class);
         page.enterLogin("user@phptravels.com", "demouser");
-        return page.getPageTitle();
     }
 }
