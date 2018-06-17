@@ -1,8 +1,8 @@
 package projekt3;
 
-public class BrowserHandler
+class BrowserHandler
 {
-    public static void setBrowser(Browser browser)
+    static void setBrowser(Browser browser)
     {
         if (System.getProperty("os.name").contains("Windows"))
         {

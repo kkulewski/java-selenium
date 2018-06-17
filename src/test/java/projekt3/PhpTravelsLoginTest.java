@@ -10,13 +10,13 @@ import projekt3.pages.PhpTravelsLoginPage;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class PhpTravelsLoginTest {
+class PhpTravelsLoginTest {
 
     private static WebDriver driver;
     private PhpTravelsLoginPage page;
 
     @Test
-    public void successfulLoginChromeTest() {
+    void successfulLoginChromeTest() {
         BrowserHandler.setBrowser(Browser.Chrome);
         driver = new ChromeDriver();
         loginWithCorrectCredentials();
@@ -24,7 +24,7 @@ public class PhpTravelsLoginTest {
     }
 
     @Test
-    public void successfulLoginFirefoxTest() {
+    void successfulLoginFirefoxTest() {
         BrowserHandler.setBrowser(Browser.Firefox);
         driver = new FirefoxDriver();
         loginWithCorrectCredentials();
@@ -32,7 +32,7 @@ public class PhpTravelsLoginTest {
     }
 
     @Test
-    public void failedLoginChromeTest() {
+    void failedLoginChromeTest() {
         BrowserHandler.setBrowser(Browser.Chrome);
         driver = new ChromeDriver();
         loginWithIncorrectCredentials();
@@ -40,7 +40,7 @@ public class PhpTravelsLoginTest {
     }
 
     @Test
-    public void failedLoginFirefoxTest() {
+    void failedLoginFirefoxTest() {
         BrowserHandler.setBrowser(Browser.Firefox);
         driver = new FirefoxDriver();
         loginWithIncorrectCredentials();
@@ -48,7 +48,7 @@ public class PhpTravelsLoginTest {
     }
 
     @AfterEach
-    public void tearDown() {
+    void tearDown() {
         driver.quit();
     }
 

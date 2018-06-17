@@ -12,13 +12,13 @@ import projekt3.pages.GoogleSearchPage;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class GoogleSearchPageTest {
+class GoogleSearchPageTest {
 
     private static WebDriver driver;
     private GoogleSearchPage page;
 
     @Test
-    public void searchSuccessfulChromeTest() {
+    void searchSuccessfulChromeTest() {
         BrowserHandler.setBrowser(Browser.Chrome);
         driver = new ChromeDriver();
         successfulSearch();
@@ -26,7 +26,7 @@ public class GoogleSearchPageTest {
     }
 
     @Test
-    public void searchFailedChromeTest() {
+    void searchFailedChromeTest() {
         BrowserHandler.setBrowser(Browser.Chrome);
         driver = new ChromeDriver();
         failedSearch();
@@ -34,7 +34,7 @@ public class GoogleSearchPageTest {
     }
 
     @Test
-    public void searchSuccessfulFirefoxTest() {
+    void searchSuccessfulFirefoxTest() {
         BrowserHandler.setBrowser(Browser.Firefox);
         driver = new FirefoxDriver();
         successfulSearch();
@@ -42,7 +42,7 @@ public class GoogleSearchPageTest {
     }
 
     @Test
-    public void searchFailedFirefoxTest() {
+    void searchFailedFirefoxTest() {
         BrowserHandler.setBrowser(Browser.Firefox);
         driver = new FirefoxDriver();
         failedSearch();
@@ -50,7 +50,7 @@ public class GoogleSearchPageTest {
     }
 
     @Test
-    public void searchSuccessfulChromeHeadlessTest() {
+    void searchSuccessfulChromeHeadlessTest() {
         BrowserHandler.setBrowser(Browser.Chrome);
         ChromeOptions options = new ChromeOptions();
         options.addArguments("headless");
@@ -62,7 +62,7 @@ public class GoogleSearchPageTest {
     }
 
     @Test
-    public void searchFailedChromeHeadlessTest() {
+    void searchFailedChromeHeadlessTest() {
         BrowserHandler.setBrowser(Browser.Chrome);
         ChromeOptions options = new ChromeOptions();
         options.addArguments("headless");
@@ -74,7 +74,7 @@ public class GoogleSearchPageTest {
     }
 
     @Test
-    public void searchSuccessfulFirefoxHeadlessTest() {
+    void searchSuccessfulFirefoxHeadlessTest() {
         BrowserHandler.setBrowser(Browser.Firefox);
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--headless");
@@ -85,7 +85,7 @@ public class GoogleSearchPageTest {
     }
 
     @Test
-    public void searchFailedFirefoxHeadlessTest() {
+    void searchFailedFirefoxHeadlessTest() {
         BrowserHandler.setBrowser(Browser.Firefox);
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--headless");
@@ -106,7 +106,7 @@ public class GoogleSearchPageTest {
     }
 
     @AfterEach
-    public void tearDownAfterClass() {
+    void tearDownAfterClass() {
         driver.quit();
     }
 }

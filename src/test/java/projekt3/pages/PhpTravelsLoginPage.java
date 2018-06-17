@@ -15,8 +15,8 @@ public class PhpTravelsLoginPage {
     @FindBy(name = "password")
     private WebElement passwordField;
 
-    public WebDriver driver;
-    public WebDriverWait wait;
+    private WebDriver driver;
+    private WebDriverWait wait;
 
     public PhpTravelsLoginPage(WebDriver driver) {
         this.driver = driver;

@@ -30,7 +30,6 @@ public class GoogleSearchPage {
   
     public boolean titleContainsSearchPhrase() {
         q = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("q")));
-        Boolean result = driver.getTitle().contains(searchPhrase);
-        return (result);
+        return driver.getTitle().contains(searchPhrase);
     }
 }
